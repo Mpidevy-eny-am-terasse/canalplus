@@ -20,6 +20,19 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
-	}		
+		$this->load->model('model_user');
+		$data = array(
+			"users" => $this->model_user->getUsers(),
+			"variable" => "valeur"
+		);
+		// $data = $this->model_user->getUsers();
+		$this->load->view('welcome_message', $data);
+	}
+
+	public function age() {
+		$this->load->model('model_user');
+		$anneN = $this->input->post('user');
+		$age = $this->model_user->calculAge($anneN);
+		echo $age;
+	}
 }
