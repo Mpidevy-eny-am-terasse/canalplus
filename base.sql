@@ -16,4 +16,3 @@ create table Bouquets
     montant float,
     idCB int not null,
     foreign key idCB references Compo_Bouquet(idCB);
-);
