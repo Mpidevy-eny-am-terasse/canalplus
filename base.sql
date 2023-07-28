@@ -34,3 +34,4 @@ create table chaine
 
 alter table chaine add foreign key (idCatChaine) references categorie_chaine (idCatChaine);
 >>>>>>> 4d54f31928c35c9e0a568309c64d99b9b5479629
+
