@@ -14,10 +14,30 @@ create table Bouquets
 (
     idBouquets serial primary key not null,
     nomBouquet varchar(100),
-    montant float,
-    idCB int not null,
-    foreign key idCB references Compo_Bouquet(idCB);
+    montant float
 );
+
+create table Abonnement
+(
+    idAbonnement serial primary key not null,
+    date_debut date not null,
+    date_fin date not null,
+    prix float,
+    idClients int,
+    idBouquets int,
+    FOREIGN KEY (idClients) REFERENCES Clients (idClients),
+    foreign key (idBouquets) references Bouquets(idBouquets)
+
+); 
+
+create table Compo_Bouquet
+(
+    idCB serial primary key not null,
+    idBouquets int not null,
+    foreign key (idBouquets) references Bouquets(idBouquets)
+);
+
+
 =======
 create table categorie_chaine
 (
@@ -33,5 +53,14 @@ create table chaine
 );
 
 alter table chaine add foreign key (idCatChaine) references categorie_chaine (idCatChaine);
+
+create table ChaineCB
+(
+    idCCB serial primary key not null,
+    idCB int not null,
+    idChaine int not null,
+    foreign key (idCB) references Compo_Bouquet(idCB),
+    foreign key (idChaine) references Chaine(idChaine)
+);
 >>>>>>> 4d54f31928c35c9e0a568309c64d99b9b5479629
 
