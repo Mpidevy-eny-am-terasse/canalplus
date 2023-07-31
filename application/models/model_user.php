@@ -1,13 +1,19 @@
 <?php
 if(! defined('BASEPATH')) exit('No direct script acces allowed');
 
-class Model_login extends CI_Model {
+class Model_user extends CI_Model {
 
     public function getUsers() {
+        $this->load->database();
         $sql = "select * from users";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return $result;
+    }
+
+    public function calculAge($anneeNaissance) {
+        $age = 2023 - $anneeNaissance;
+        return $age;
     }
 
     public function getUsersById($idUser) {

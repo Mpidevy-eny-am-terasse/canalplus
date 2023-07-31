@@ -85,5 +85,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
 
+<?php
+	var_dump($users);
+	echo $variable;
+?>
+
+<form action="<?php echo base_url('welcome/age') ?>" method="post">
+	<select name="user" id="">
+		<?php foreach($users as $user) { ?>
+			<option value="<?php echo $user['anneenaissance'] ?>"><?php echo $user['nom'] ?></option>
+		<?php } ?>
+	</select>
+	<input type="submit" value="valider">
+</form>
+
 </body>
 </html>
