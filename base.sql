@@ -125,3 +125,5 @@ insert into Clients(nom,tel,cin,adresse,mail) values('Anrick Larsen',0340000021,
 insert into Clients(nom,tel,cin,adresse,mail) values('Jary Nomena',0327500110,123654789,'IVA 214 A Talatamaty','jary@gmail.com');
 insert into Clients(nom,tel,cin,adresse,mail) values('Gasy Kely',0348609151,000654789,'IVB 118 A Soavimasoandro','gasy@gmail.com');
 
+--tet
+
