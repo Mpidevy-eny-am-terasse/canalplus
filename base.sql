@@ -1,6 +1,5 @@
 --nom de la base de donnée : canal
 
-<<<<<<< HEAD
 create table Clients
 (
     idClients SERIAL PRIMARY KEY not null,
@@ -50,7 +49,6 @@ insert into Compo_Bouquet(idBouquets) values (4);
 insert into Compo_Bouquet(idBouquets) values (5);
 
 
-=======
 create table categorie_chaine
 (
     idCatChaine serial primary key,
@@ -126,5 +124,4 @@ insert into Clients(nom,tel,cin,adresse,mail) values('Rudy Lee',0331200110,12365
 insert into Clients(nom,tel,cin,adresse,mail) values('Anrick Larsen',0340000021,105654789,'IVB 096 B Talatamaty','anrick@gmail.com');
 insert into Clients(nom,tel,cin,adresse,mail) values('Jary Nomena',0327500110,123654789,'IVA 214 A Talatamaty','jary@gmail.com');
 insert into Clients(nom,tel,cin,adresse,mail) values('Gasy Kely',0348609151,000654789,'IVB 118 A Soavimasoandro','gasy@gmail.com');
->>>>>>> 4d54f31928c35c9e0a568309c64d99b9b5479629
 
