@@ -4,7 +4,7 @@ if(! defined('BASEPATH')) exit('No direct script acces allowed');
 class Model_Login extends CI_Model{
     
     function getBase(){
-        $sql = "select * from user";
+        $sql = "select * from clients";
         $query = $this->db->query($sql);
         $result = $query->result_arry();
         return $result;
@@ -26,5 +26,5 @@ class Model_Login extends CI_Model{
         $query = $this->db->query($sql);
     }
 
-}
+}  
 ?>
