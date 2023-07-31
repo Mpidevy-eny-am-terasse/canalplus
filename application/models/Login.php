@@ -17,8 +17,14 @@ class Login extends CI_Model{
                return true;
             }
         }
-        return fauls;
+        return false;
     }
-}
 
+    function sinUp($nom,$tel,$cin,$adresse,$mail){
+        $sql= "insert into Clients (nom,tel,cin,adresse,mail) values (%s,%s,%s,%s,%s)";
+        $sql = sprintf($sql, $this->db->escape($nom), $this->db->escape($tel), $this->db->escape($cin),$this->db->escape($adresse),$this->db->escape($mail));
+        $query = $this->db->query($sql);
+    }
+
+}
 ?>

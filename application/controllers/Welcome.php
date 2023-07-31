@@ -20,25 +20,27 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-<<<<<<< HEAD
 		$this->load->view('welcome_message');
-	}		
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-=======
-		$this->load->model('model_user');
-		$data = array(
-			"users" => $this->model_user->getUsers(),
-			"variable" => "valeur"
-		);
-		// $data = $this->model_user->getUsers();
-		$this->load->view('welcome_message', $data);
-	}
+	}		                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+	// 	$this->load->model('model_user');
+	// 	$data = array(
+	// 		"users" => $this->model_user->getUsers(),
+	// 		"variable" => "valeur"
+	// 	);
+	// 	// $data = $this->model_user->getUsers();
+	// 	$this->load->view('welcome_message', $data);
 
-	public function age() {
-		$this->load->model('model_user');
-		$anneN = $this->input->post('user');
-		$age = $this->model_user->calculAge($anneN);
-		echo $age;
+
+	// public function age() {
+	// 	$this->load->model('model_user');
+	// 	$anneN = $this->input->post('user');
+	// 	$age = $this->model_user->calculAge($anneN);
+	// 	echo $age;
+	// }
+
+	public function test(){
+		$this->load->model('Login');
+		$this->Login->sinUp('namby',0340102,102034,'lotTrano','namby@gmail.com');
 	}
 }
->>>>>>> c29a4fb6c0c57b63424a02c95035c423eedf1c0a
+
