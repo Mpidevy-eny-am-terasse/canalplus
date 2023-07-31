@@ -6,7 +6,7 @@ class Model_Login extends CI_Model{
     function getBase(){
         $sql = "select * from clients";
         $query = $this->db->query($sql);
-        $result = $query->result_arry();
+        $result = $query->result_array();
         return $result;
     }
 
