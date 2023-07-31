@@ -1,7 +1,7 @@
 <?php
 if(! defined('BASEPATH')) exit('No direct script acces allowed');
 
-class Login extends CI_Model{
+class Model_Login extends CI_Model{
     
     function getBase(){
         $sql = "select * from user";
