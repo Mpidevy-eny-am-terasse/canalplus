@@ -1,3 +1,4 @@
+--test
 --nom de la base de donnée : canal
 create database canal;
 use canal;
