@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="css/index.css">
+        
+    <!-- ===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+     <title>www.canalplus.com</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i>
+            <span class="logo navLogo"><a href="#">CanalPlus</a></span>
+
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">CanalPlus</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Acceuil</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="chaines.html">Nos Chaînes</a></li>
+                    <li><a href="#">Vos Abonnements</a></li>
+                </ul>
+            </div>
+
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+
+                <div class="searchBox">
+                   <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <i class='bx bx-search search'></i>
+                   </div>
+
+                    <div class="search-field">
+                        <input type="text" placeholder="Recherche...">
+                        <i class='bx bx-search'></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- bouton se connecter -->
+            <div class="login">
+                <button type="button" class="btn btn-danger">Se Connecter</button>
+                
+            </div>
+            <!-- fin bouton se connecter -->
+            </div>
+
+
+            <!-- slider video -->
+            <div class="slide-container">
+                <div class="custom-slider fade">
+                    <div class="slide-index">1 / 3</div>
+                    <!-- <img class="slide-img" src="https://www.codeur.com/tuto/wp-content/uploads/2021/12/slide1.jpg"> -->
+                    <video class="slide-img" controls loop>
+                        <source src="video/canalplus.mp4" type="video/mp4">
+                    </video>
+                    <div class="slide-text">NE CONFIEZ PAS VOTRE IMAGINATION A N'IMPORTE QUI</div>
+                </div>                
+                <div class="custom-slider fade">
+                    <div class="slide-index">2 / 3</div>
+                    <!-- <img class="slide-img" src="https://www.codeur.com/tuto/wp-content/uploads/2021/12/slide2.jpg"> -->
+                    <video class="slide-img" controls loop>
+                        <source src="video/canalplus2.mp4" type="video/mp4">
+                    </video>
+                    <div class="slide-text">NE CONFIEZ PAS VOTRE IMAGINATION A N'IMPORTE QUI</div>
+                </div>
+                <div class="custom-slider fade">
+                    <div class="slide-index">3 / 3</div>
+                    <!-- <img class="slide-img" src="https://www.codeur.com/tuto/wp-content/uploads/2021/12/slide3.jpg"> -->
+                    <video class="slide-img" controls loop>
+                        <source src="video/canalplus3.mp4" type="video/mp4">
+                    </video>
+                    <div class="slide-text">NE CONFIEZ PAS VOTRE IMAGINATION A N'IMPORTE QUI</div>
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+            </div>
+            <br>
+            <div class="slide-dot">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+            <!-- fin slider video -->
+
+            <!-- bouton s'inscrire aux abonnements -->
+            <div class="abonnement">
+                <button type="button" class="btn btn-danger">s'inscrire aux abonnements</button>
+                
+            </div>
+            <!-- fin bouton s'inscrire aux abonnements' -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <p>footer+contact</p>
+                </div>
+            </footer>
+            
+    </nav>
+</body>
+</html>
+
+<!-- code script java  ========================================================= -->
+<script>
+
+const body = document.querySelector("body"),
+      nav = document.querySelector("nav"),
+      modeToggle = document.querySelector(".dark-light"),
+      searchToggle = document.querySelector(".searchToggle"),
+      sidebarOpen = document.querySelector(".sidebarOpen"),
+      siderbarClose = document.querySelector(".siderbarClose");
+
+      let getMode = localStorage.getItem("mode");
+          if(getMode && getMode === "dark-mode"){
+            body.classList.add("dark");
+          }
+
+// Transformations en mode clair ou sombre(dark)
+
+        modeToggle.addEventListener("click" , () =>{
+        modeToggle.classList.toggle("active");
+        body.classList.toggle("dark");
+
+// sauvegarde pour garder le mode sélectionné par l'utilisateur même l'actualisation de la page ou la réouverture du fichier
+
+        if(!body.classList.contains("dark")){
+            localStorage.setItem("mode" , "light-mode");
+        }else{
+            localStorage.setItem("mode" , "dark-mode");
+        }
+      });
+
+// afficher la barre de recherche
+        searchToggle.addEventListener("click" , () =>{
+        searchToggle.classList.toggle("active");
+      });
+ 
+      
+// code pour basculer la barre latéraler
+sidebarOpen.addEventListener("click" , () =>{
+    nav.classList.add("active");
+});
+
+body.addEventListener("click" , e =>{
+    let clickedElm = e.target;
+
+    if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+        nav.classList.remove("active");
+    }
+});
+
+</script>
+<!-- ============================================================================================= -->
+<!-- slider video -->
+<script>
+var slideIndex = 1;
+var videos = document.querySelectorAll('.slide-img');
+
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("custom-slider");
+    var dots = document.getElementsByClassName("dot");
+    
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    
+    // Mettre en pause les vidéos inactives
+    videos.forEach(function(video, index) {
+        if (index !== slideIndex - 1) {
+            video.pause();
+        } else {
+            video.play(); // Lancer la vidéo active
+        }
+    });
+}
+</script>
+
